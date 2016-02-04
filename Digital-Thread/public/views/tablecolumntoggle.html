@@ -1,0 +1,10 @@
+<div>
+  <h3>
+    <b>{{heading}}</b>
+  </h3>
+  <span ng-repeat="column in columns">
+    <label>
+      <input type="checkbox" data-toggle-switch="true" ng-model="column.checked"> {{ column.custom }} &nbsp;&nbsp;&nbsp;&nbsp;</input>
+    </label>
+  </span>
+</div>
