@@ -1,0 +1,17 @@
+<div class="module">
+  <div class="module-body">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th ng-repeat="column in columns">{{ column.custom }}</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="row in data">
+          <td ng-repeat="column in columns">{{ row[column.original] }}</td>
+        </tr>
+      </tbody>
+      <tfoot></tfoot>
+    </table>
+  </div>
+</div>
