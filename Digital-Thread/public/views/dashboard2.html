@@ -1,0 +1,47 @@
+<div id="home-page"  class="page">
+	<div class="page-header voice voice-brand">
+		<h1 class="pull-left page-title">Dashboard</h1>
+	</div>
+	<div class="row">    
+		<div class="col-sm-7 col-md-7">     
+			<div class="module">              
+				<div class="module-body"> 
+					<form class="form-search pull-right col-sm-3">  
+						<div class="input-group ">    
+							<input type="text" ng-model="test" class="form-control search-query" data-filter-table="dt-dom">    
+							<span class="input-group-btn"><button class="btn btn-icon"><i class="icon-search"></i></button></span>  
+						</div> 						
+					</form>
+					Manager ID: {{manager_id}}   Manager Name: {{manager_name}}
+					<table cellpadding="0" cellspacing="0" border="0" class="table table-bordered" data-table-name="dt-ajax-objects">
+						<thead>
+				<tr > 
+					<th> Row No. </th>
+					<th> ProjectID </th>
+					<th> Project name </th>
+					<th> Number Of Deliverables </th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="project in projects | filter:test" >
+					<td> {{$index + 1}} </td>
+					<td><a href="#/project/{{ project.Project_id}}">{{ project.Project_id}}</a> </td>
+					<td> {{ project.Project_name}} </td>
+					<td> {{ project.Delevirable}} </td>
+				</tr>
+			</tbody>
+					</table> 
+				</div>        
+				<footer class="module-footer"></footer>      
+			</div>    
+		</div>    
+		<div class="col-sm-5 col-md-5">      
+			<div class="module">              
+				<div class="module-body"> 
+					<div id="chart-column-stacked" class="chart"></div> 
+				</div>        
+				<footer class="module-footer"></footer>      
+			</div>    
+		</div>   
+	</div>
+</div>
