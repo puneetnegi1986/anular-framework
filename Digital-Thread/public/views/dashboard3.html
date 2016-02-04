@@ -1,0 +1,47 @@
+<div id="home-page"  class="page">
+	<div class="page-header voice voice-brand">
+		<h1 class="pull-left page-title">Dashboard</h1>
+	</div>
+	<div class="row">    
+		<div class="col-sm-7 col-md-7">     
+			<div class="module">              
+				<div class="module-body"> 
+					<form class="form-search pull-right col-sm-3">  
+						<div class="input-group ">    
+							<input type="text" ng-model="test" class="form-control search-query" data-filter-table="dt-dom">    
+							<span class="input-group-btn"><button class="btn btn-icon"><i class="icon-search"></i></button></span>  
+						</div> 						
+					</form>
+					Manager ID: {{manager_id}}   Manager Name: {{manager_name}}<br>
+					Project ID:{{project_id}}     Project name: {{project_name}}
+					
+					<table cellpadding="0" cellspacing="0" border="0" class="table table-bordered" data-table-name="dt-ajax-objects">
+						<thead>
+				<tr > 
+					<th> Row No. </th>
+					<th> Deliverable Name </th>
+					<th> Due Date</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="delivery in deliverys" >
+					<td> {{$index + 1}} </td>
+					<td><a href="#/realtime">{{ delivery.Delivery_name}}</a>  </td>
+					<td> {{ delivery.Due_Date}} </td>
+				</tr>
+			</tbody>
+					</table> 
+				</div>        
+				<footer class="module-footer"></footer>      
+			</div>    
+		</div>    
+		<div class="col-sm-5 col-md-5">      
+			<div class="module">              
+				<div class="module-body"> 
+					<div id="chart-column-stacked" class="chart"></div> 
+				</div>        
+				<footer class="module-footer"></footer>      
+			</div>    
+		</div>   
+	</div>
+</div>
