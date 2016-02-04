@@ -1,0 +1,58 @@
+<div id="home-page"  class="page">
+	<div class="page-header voice voice-brand">
+		<h1 class="pull-left page-title">Dashboard</h1>
+	</div>
+	<div class="row"> 
+		<div clas="col-sm-12" id="tablefilter" ng-controller="TableCtrl">
+			<div class="col-sm-2 col-md-2" > 
+				<div class="module">  
+					<div class="module-body"> 
+						<bsl-table-filter heading="Filters" targetid="failTable" filtercolumn='[1,2,4,5]' ></bsl-table-filter>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-10 col-md-10">     
+				<div class="module">              
+					<div class="module-body" > 
+						<bsl-table-column-toggle targetid="failTable" heading="Hide/Show Columns"></bsl-table-column-toggle>
+						<div style="height:200px; overflow:auto;">
+							<bsl-table id="failTable" url="scripts/data/managers.json"  sequence="[1,2,3,0,4,5]" ></bsl-table>
+						</div>
+					</div>        
+					<footer class="module-footer"></footer>      
+				</div>    
+			</div>
+			<div class="col-sm-10 col-md-10" id="tablechart" ng-controller="ChartsCtrl">   
+				<section class="module">
+					<header class="module-header">
+						<h3 class="voice voice-brand pull-left"><b>Trend Charts</b></h3>
+						<div class="pull-right">
+							Select Chart Type: &nbsp;&nbsp;<select style="height:25px;" ng-model="selectedData" ng-options="data.key as data.value for data in selectData"> </select>
+							 &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;Trend Value: &nbsp;&nbsp;<input type="text" style="height:25px;" id="trendValue" name="trendValue" ng-model="trendValue">
+						</div>
+					</header>
+					<div class="module-body">
+						<div id="chart-div" class="module-highcharts"></div>
+					</div>
+					<footer class="module-footer"></footer>
+				</section>
+				
+			<section class="module">
+					<header class="module-header">
+						<div class="pull-right">
+							Select Chart Type: &nbsp;&nbsp;<select style="height:25px;" ng-model="selectedData1" ng-options="data.key as data.value for data in selectData1"> </select>
+							 &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;Trend Value: &nbsp;&nbsp;<input type="text" style="height:25px;" id="trendValue1" name="trendValue1" ng-model="trendValue1">
+						</div>
+					</header>
+					<div class="module-body">
+						<div id="chart-div1" class="module-highcharts"></div>
+					</div>
+					<footer class="module-footer"></footer>
+				</section>
+				
+			</div>
+		</div>
+		
+	</div>
+</div>
+
